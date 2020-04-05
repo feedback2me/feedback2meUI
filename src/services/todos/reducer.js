@@ -1,6 +1,7 @@
-import actionTypes from "../actions/actionTypes";
+import actionTypes from "../../actions/actionTypes";
+import initialState from '../state';
 
-const todos = (state = [], action) => {
+const todos = (state = initialState.todos, action) => {
   switch (action.type) {
     case actionTypes.TODO.ADD:
       return [

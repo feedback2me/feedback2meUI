@@ -1,10 +1,10 @@
 const actionTypes = {
   TODO: {
-    ADD: "ADD-TODO",
-    TOGGLE: "TOGGLE-TODO"
+    ADD: "ADD_TODO",
+    TOGGLE: "TOGGLE_TODO"
   },
   FILTER: {
-    SET_VISIBILITY: "SET_VISIBILITY-FILTER"
+    SET_VISIBILITY: "SET_VISIBILITY_FILTER"
   }
 };
 

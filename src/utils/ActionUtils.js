@@ -44,11 +44,11 @@ function getActionType(name, status) {
 }
 
 const ActionStatus = {
-  start: "ACTION-START",
-  inProgress: "ACTION-IN-PROGRESS",
-  succeed: "ACTION-SUCCEED",
-  failed: "ACTION-FAILED",
-  done: "ACTION-DONE"
+  start: "ACTION_START",
+  inProgress: "ACTION_IN_PROGRESS",
+  succeed: "ACTION_SUCCEED",
+  failed: "ACTION_FAILED",
+  done: "ACTION_DONE"
 };
 
 export { getActionType, ActionStatus, CustomActions, RequestActions };
