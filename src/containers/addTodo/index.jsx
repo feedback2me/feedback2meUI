@@ -1,27 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as todoActions from '../../state/todos/actions';
+import AddTodoForm from '../../components/addTodoForm';
 
 const AddTodo = ({ dispatch }) => {
-    let input;
+    const [todoName, setTodoName] = useState('');
 
-    const onSubmit = (e) => {
+    const onChangeInput = (e) => {
+        setTodoName(e.target.value);
+    }
+
+    const onAdd = (e) => {
         e.preventDefault();
-        if (!input.value.trim()) {
+        if (!todoName.trim()) {
             return;
         }
-        dispatch(todoActions.addTodo(input.value));
-        input.value = '';
+        dispatch(todoActions.addTodo(todoName));
+        setTodoName('');
     };
 
     return (
-        <div>
-            <form onSubmit={onSubmit}>
-                <input ref={(node) => { input = node; }} />
-                <button type="submit">Add Todo</button>
-            </form>
-        </div>
+        <AddTodoForm
+            todoName={todoName}
+            onChangeTodoName={onChangeInput}
+            onAdd={onAdd}
+        />
     );
 };
 
