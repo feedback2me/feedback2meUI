@@ -1,3 +1,3 @@
 export default {
-  helloWorldApi: "/api/hello/world"
+    helloWorldApi: '/api/hello/world',
 };

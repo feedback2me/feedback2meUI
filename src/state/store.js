@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+/* eslint import/no-extraneous-dependencies: "off" */
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware, { END } from 'redux-saga';
 import rootReducer from './reducers';
