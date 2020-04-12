@@ -1,6 +1,6 @@
 import React from 'react';
-import FilterLink from '../containers/FilterLink';
-import constants from '../utils/constants';
+import FilterLink from '../../containers/filterLink';
+import constants from '../../utils/constants';
 
 const Footer = () => (
     <div>

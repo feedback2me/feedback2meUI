@@ -13,6 +13,7 @@ module.exports = {
         sourceType: 'module',
     },
     plugins: ['react'],
+    ignorePatterns: ["node_modules/"],
     rules: {
         indent: ['error', 4],
         'react/jsx-indent': ['error', 4],

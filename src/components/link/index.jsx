@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as Styled from './style';
 
 const Link = ({ active, children, onClick }) => (
-    <button
+    <Styled.LinkButton
         onClick={onClick}
         disabled={active}
-        style={{
-            marginLeft: '4px',
-        }}
     >
         {children}
-    </button>
+    </Styled.LinkButton>
 );
 
 Link.propTypes = {

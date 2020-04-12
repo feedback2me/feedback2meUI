@@ -1,21 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as Styled from './style';
 
-const Todo = ({ onClick, completed, text }) => (
-    <li
+const TodoListItem = ({ onClick, completed, text }) => (
+    <Styled.TodoListItem
         onClick={onClick}
-        style={{
-            textDecoration: completed ? 'line-through' : 'none',
-        }}
+        completed={completed}
     >
         {text}
-    </li>
+    </Styled.TodoListItem>
 );
 
-Todo.propTypes = {
+TodoListItem.propTypes = {
     onClick: PropTypes.func.isRequired,
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired,
 };
 
-export default Todo;
+export default TodoListItem;
