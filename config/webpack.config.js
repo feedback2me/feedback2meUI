@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.jsx",
+  entry: ['babel-polyfill', './src/index.jsx'],
   output: {
     path: path.resolve(__dirname + "/../", "dist"),
     filename: "bundle.js"
@@ -40,6 +40,13 @@ module.exports = {
     contentBase: path.join(__dirname, "dist"),
     historyApiFallback: true, // html is served in place of any 404 responses.
     compress: true,
-    port: 9000
+    port: 9000,
+    proxy: {
+      "/api": {
+        target: "https://test-api.service.hmrc.gov.uk",
+        pathRewrite: { "^/api" : "" },
+        changeOrigin: true
+      }
+    }
   }
 };

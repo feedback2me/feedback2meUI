@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
-import rootReducer from "./reducers";
 import App from "./containers/App";
 
-const store = createStore(rootReducer);
+import initialState from './state/state';
+import configureStore from './state/store';
+import rootSaga from './state/sagas';
+
+const store = configureStore(initialState);
+store.runSaga(rootSaga);
 
 const container = document.getElementById("app");
 ReactDOM.render(
