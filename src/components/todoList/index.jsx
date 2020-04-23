@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TodoListItem from '../todoListItem';
+import {List} from 'immutable';
 
 const TodoList = ({ todos, toggleTodo }) => (
     <ul>
@@ -14,14 +15,10 @@ const TodoList = ({ todos, toggleTodo }) => (
     </ul>
 );
 
+
+
 TodoList.propTypes = {
-    todos: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            completed: PropTypes.bool.isRequired,
-            text: PropTypes.string.isRequired,
-        }).isRequired,
-    ).isRequired,
+    todos: PropTypes.instanceOf(List),
     toggleTodo: PropTypes.func.isRequired,
 };
 
