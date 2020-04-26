@@ -3,10 +3,10 @@ import constants from '../../utils/constants';
 
 const visibilityFilter = (state = initialState.visibilityFilter, action) => {
     switch (action.type) {
-    case constants.setVisibilityFilter:
-        return action.filter;
-    default:
-        return state;
+        case constants.setVisibilityFilter:
+            return action.filter;
+        default:
+            return state;
     }
 };
 

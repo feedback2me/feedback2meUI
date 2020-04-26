@@ -1,6 +1,4 @@
-import {
-    takeEvery, call,
-} from 'redux-saga/effects';
+import { takeEvery, call } from 'redux-saga/effects';
 import { get } from '../../services/api';
 import routes from '../../utils/routes';
 import constants from '../../utils/constants';

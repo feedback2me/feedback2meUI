@@ -9,7 +9,7 @@ const AddTodo = ({ dispatch }) => {
 
     const onChangeInput = (e) => {
         setTodoName(e.target.value);
-    }
+    };
 
     const onAdd = (e) => {
         e.preventDefault();

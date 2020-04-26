@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import * as Styled from './style';
 
 const TodoListItem = ({ onClick, completed, text }) => (
-    <Styled.TodoListItem
-        onClick={onClick}
-        completed={completed}
-    >
+    <Styled.TodoListItem onClick={onClick} completed={completed}>
         {text}
     </Styled.TodoListItem>
 );

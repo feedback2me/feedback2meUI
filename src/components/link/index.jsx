@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import * as Styled from './style';
 
 const Link = ({ active, children, onClick }) => (
-    <Styled.LinkButton
-        onClick={onClick}
-        disabled={active}
-    >
+    <Styled.LinkButton onClick={onClick} disabled={active}>
         {children}
     </Styled.LinkButton>
 );

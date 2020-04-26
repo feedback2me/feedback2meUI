@@ -15,9 +15,7 @@ export default function configureStore(initialState) {
     const store = createStore(
         rootReducer,
         initialState,
-        compose(
-            applyMiddleware(...middlewares),
-        ),
+        compose(applyMiddleware(...middlewares)),
     );
 
     store.runSaga = sagaMiddleware.run;

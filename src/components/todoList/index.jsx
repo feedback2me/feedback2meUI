@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { List } from 'immutable';
 import TodoListItem from '../todoListItem';
-import {List} from 'immutable';
 
 const TodoList = ({ todos, toggleTodo }) => (
     <ul>
@@ -14,8 +14,6 @@ const TodoList = ({ todos, toggleTodo }) => (
         ))}
     </ul>
 );
-
-
 
 TodoList.propTypes = {
     todos: PropTypes.instanceOf(List),
