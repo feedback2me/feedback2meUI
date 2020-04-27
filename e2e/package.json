@@ -1,0 +1,18 @@
+{
+    "name": "feedback2me-e2e",
+    "version": "0.0.1",
+    "description": "E2E tests for the application",
+    "main": "index.js",
+    "author": "Burak Buruk",
+    "license": "MIT",
+    "scripts": {
+        "start": "cypress open"
+    },
+    "devDependencies": {
+        "cypress": "^4.4.1",
+        "cypress-cucumber-preprocessor": "^2.3.1"
+    },
+    "cypress-cucumber-preprocessor": {
+        "nonGlobalStepDefinitions": true
+    }
+}
