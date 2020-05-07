@@ -1,14 +1,22 @@
 import React from 'react';
-import Footer from '../../components/footer';
 import AddTodo from '../addTodo';
 import VisibleTodoList from '../visibleTodoList';
+import TodoActions from '../../components/todoActions';
+import TopBar from '../../components/topBar';
+import Footer from '../../components/footer';
+import Content from '../../components/content';
+import { Layout } from 'antd';
 
 const App = () => (
-    <div>
-        <AddTodo />
-        <VisibleTodoList />
+    <Layout>
+        <TopBar />
+        <Content>
+            <AddTodo />
+            <VisibleTodoList />
+            <TodoActions />
+        </Content>
         <Footer />
-    </div>
+    </Layout>
 );
 
 export default App;
