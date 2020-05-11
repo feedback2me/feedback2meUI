@@ -2,10 +2,13 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules/
 
 # production
-/dist
+dist/
+
+# test
+coverage/
 
 .idea/
 
@@ -21,8 +24,6 @@ yarn-debug.log*
 yarn-error.log*
 yarn.lock*
 
-/coverage
-
 .editorconfig
 .prettierrc
-node_modules
+
