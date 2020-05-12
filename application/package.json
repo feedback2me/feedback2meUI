@@ -1,7 +1,7 @@
 {
-    "name": "react-template",
+    "name": "feedback2me-ui",
     "version": "0.0.1",
-    "description": "Template project for react application.",
+    "description": "Feedback UI application",
     "main": "src/index.jsx",
     "author": "Burak Buruk",
     "license": "MIT",
