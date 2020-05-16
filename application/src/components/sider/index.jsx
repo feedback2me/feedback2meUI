@@ -7,18 +7,14 @@ import {
     LaptopOutlined,
     NotificationOutlined,
 } from '@ant-design/icons';
+import * as Styled from './style';
 
 import { Link } from 'react-router-dom';
 
 export const Sider = () => (
-    <AntSider width={200}>
-        <Menu
-            theme="dark"
-            mode="inline"
-            defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
-            style={{ height: '100%', borderRight: 0 }}
-        >
+    <AntSider width={200} breakpoint="lg" collapsedWidth="0">
+        <Styled.Logo />
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={['todo-menu']}>
             <Menu.Item key="home-menu" icon={<LaptopOutlined />}>
                 <Link to="/">Home</Link>
             </Menu.Item>

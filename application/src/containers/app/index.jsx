@@ -9,18 +9,16 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import * as Styled from './style';
 
 const App = () => (
-    <Layout>
-        <Router>
-            <TopBar />
+    <Router>
+        <Layout>
+            <Sider />
             <Styled.SiteLayout>
-                <Sider />
-                <Layout>
-                    <Content />
-                    <Footer />
-                </Layout>
+                <TopBar />
+                <Content />
+                <Footer />
             </Styled.SiteLayout>
-        </Router>
-    </Layout>
+        </Layout>
+    </Router>
 );
 
 export default App;

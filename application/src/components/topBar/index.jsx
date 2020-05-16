@@ -6,25 +6,22 @@ import { updateSelectedMenuId } from '../../state/topBar/actions';
 
 import { Link } from 'react-router-dom';
 
-const { Header } = Layout;
+import * as Styled from './style';
 
 const TopBar = ({ selectedMenuId, onSelectMenu }) => {
     return (
-        <Layout>
-            <Header>
-                <div></div>
-                <Menu
-                    mode="horizontal"
-                    onSelect={onSelectMenu}
-                    defaultSelectedKeys={['2']}
-                    selectedKeys={[selectedMenuId]}
-                >
-                    <Menu.Item key="1">
-                        <Link to="/">Home</Link>
-                    </Menu.Item>
-                </Menu>
-            </Header>
-        </Layout>
+        <Styled.AntHeader>
+            <Menu
+                mode="horizontal"
+                onSelect={onSelectMenu}
+                defaultSelectedKeys={['2']}
+                selectedKeys={[selectedMenuId]}
+            >
+                <Menu.Item key="1">
+                    <Link to="/">Home</Link>
+                </Menu.Item>
+            </Menu>
+        </Styled.AntHeader>
     );
 };
 

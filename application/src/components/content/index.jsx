@@ -7,23 +7,19 @@ import { HomePage } from '../../pages/homePage';
 import { AntRootContent, AntContent, AntLayout } from './style';
 
 const Content = () => (
-    <AntRootContent>
-        <AntLayout>
-            <AntContent>
-                <Switch>
-                    <Route exact path="/">
-                        <HomePage />
-                    </Route>
-                    <Route path="/todo">
-                        <TodoPage />
-                    </Route>
-                    <Route path="/codeFeedback">
-                        <CodeFeedbackPage />
-                    </Route>
-                </Switch>
-            </AntContent>
-        </AntLayout>
-    </AntRootContent>
+    <AntContent>
+        <Switch>
+            <Route exact path="/">
+                <HomePage />
+            </Route>
+            <Route path="/todo">
+                <TodoPage />
+            </Route>
+            <Route path="/codeFeedback">
+                <CodeFeedbackPage />
+            </Route>
+        </Switch>
+    </AntContent>
 );
 
 export default Content;
