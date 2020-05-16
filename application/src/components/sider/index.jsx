@@ -2,40 +2,72 @@ import React from 'react';
 const { SubMenu } = Menu;
 const { Sider: AntSider } = Layout;
 import { Layout, Menu } from 'antd';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import {
-    UserOutlined,
-    LaptopOutlined,
-    NotificationOutlined,
+    CarryOutOutlined,
+    CodeOutlined,
+    HomeOutlined,
+    PlayCircleOutlined,
+    GlobalOutlined,
 } from '@ant-design/icons';
 import * as Styled from './style';
 
-import { Link } from 'react-router-dom';
+import { getSelectedMenuId } from '../../state/topBar/selectors';
+import { updateSelectedMenuId } from '../../state/topBar/actions';
 
-export const Sider = () => (
-    <AntSider width={200} breakpoint="lg" collapsedWidth="0">
+export const Sider = ({ selectedMenuId, onSelectMenu }) => (
+    <AntSider width={250} breakpoint="lg" collapsedWidth="0">
         <Styled.Logo />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['todo-menu']}>
-            <Menu.Item key="home-menu" icon={<LaptopOutlined />}>
-                <Link to="/">Home</Link>
+        <Menu
+            theme="dark"
+            mode="inline"
+            // onSelect={onSelectMenu}
+            // selectedKeys={[selectedMenuId]}
+            defaultSelectedKeys={['todo-menu']}
+        >
+            <Menu.Item key="home-menu">
+                <Link to="/">
+                    <HomeOutlined /> Home
+                </Link>
             </Menu.Item>
-            <Menu.Item key="todo-menu" icon={<NotificationOutlined />}>
-                <Link to="/todo">Todo</Link>
+            <Menu.Item key="todo-menu">
+                <Link to="/todo">
+                    <CarryOutOutlined /> Todo
+                </Link>
             </Menu.Item>
-            <SubMenu
-                key="feedback-menu"
-                icon={<UserOutlined />}
-                title="Feedback"
-            >
+            <SubMenu key="feedback-menu" title="Feedback">
                 <Menu.Item key="feedback-menu-item">
-                    <Link to="/codeFeedback">Code</Link>
+                    <Link to="/codeFeedback">
+                        <CodeOutlined /> Code
+                    </Link>
                 </Menu.Item>
                 <Menu.Item key="music-menu-item">
-                    <Link to="/codeFeedback">Music</Link>
+                    <Link to="/codeFeedback">
+                        <PlayCircleOutlined /> Music
+                    </Link>
                 </Menu.Item>
                 <Menu.Item key="language-menu-item">
-                    <Link to="/codeFeedback">Language</Link>
+                    <Link to="/codeFeedback">
+                        <GlobalOutlined />
+                        Language
+                    </Link>
                 </Menu.Item>
             </SubMenu>
         </Menu>
     </AntSider>
 );
+
+const mapStateToProps = (state) => ({
+    selectedMenuId: getSelectedMenuId(state),
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    onSelectMenu(selection) {
+        const selectedMenuId = selection.selectedKeys[0];
+        dispatch(updateSelectedMenuId(selectedMenuId));
+    },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sider);

@@ -1,25 +1,16 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
+import { Menu } from 'antd';
 import { connect } from 'react-redux';
 import { getSelectedMenuId } from '../../state/topBar/selectors';
 import { updateSelectedMenuId } from '../../state/topBar/actions';
 
-import { Link } from 'react-router-dom';
-
 import * as Styled from './style';
 
-const TopBar = ({ selectedMenuId, onSelectMenu }) => {
+const TopBar = () => {
     return (
         <Styled.AntHeader>
-            <Menu
-                mode="horizontal"
-                onSelect={onSelectMenu}
-                defaultSelectedKeys={['2']}
-                selectedKeys={[selectedMenuId]}
-            >
-                <Menu.Item key="1">
-                    <Link to="/">Home</Link>
-                </Menu.Item>
+            <Menu mode="horizontal" defaultSelectedKeys={['2']}>
+                <Menu.Item key="1">Home</Menu.Item>
             </Menu>
         </Styled.AntHeader>
     );
