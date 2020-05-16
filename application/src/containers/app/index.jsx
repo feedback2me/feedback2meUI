@@ -1,21 +1,25 @@
 import React from 'react';
-import AddTodo from '../addTodo';
-import VisibleTodoList from '../visibleTodoList';
-import TodoActions from '../../components/todoActions';
+
 import TopBar from '../../components/topBar';
 import Footer from '../../components/footer';
 import Content from '../../components/content';
 import { Layout } from 'antd';
+import { Sider } from '../../components/sider';
+import { BrowserRouter as Router } from 'react-router-dom';
+import * as Styled from './style';
 
 const App = () => (
     <Layout>
-        <TopBar />
-        <Content>
-            <AddTodo />
-            <VisibleTodoList />
-            <TodoActions />
-        </Content>
-        <Footer />
+        <Router>
+            <TopBar />
+            <Styled.SiteLayout>
+                <Sider />
+                <Layout>
+                    <Content />
+                    <Footer />
+                </Layout>
+            </Styled.SiteLayout>
+        </Router>
     </Layout>
 );
 

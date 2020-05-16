@@ -1,4 +1,5 @@
 export default {
+    updateSelectedMenuId: 'topBar/updateSelectedMenuId',
     setVisibilityFilter: 'visibilityFilter/set',
     addTodo: 'todo/add',
     toggleTodo: 'todo/toggle',

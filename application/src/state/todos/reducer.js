@@ -8,7 +8,7 @@ const toggleTodo = (todo, action) => {
     return todo;
 };
 
-const todos = (state = initialState.todos, action) => {
+const todosReducer = (state = initialState.todos, action) => {
     switch (action.type) {
         case constants.addTodo:
             return state.push({
@@ -23,4 +23,4 @@ const todos = (state = initialState.todos, action) => {
     }
 };
 
-export default todos;
+export default todosReducer;
