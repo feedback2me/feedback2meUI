@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { List } from 'immutable';
 import TodoListItem from '../todoListItem';
+import * as Styled from './style';
 
 const TodoList = ({ todos, toggleTodo }) => (
-    <ul data-id="todoList">
+    <Styled.ListWrapper data-id="todoList">
         {todos.map((todo) => (
             <TodoListItem
                 key={todo.id}
@@ -12,7 +13,7 @@ const TodoList = ({ todos, toggleTodo }) => (
                 onClick={() => toggleTodo(todo.id)}
             />
         ))}
-    </ul>
+    </Styled.ListWrapper>
 );
 
 TodoList.propTypes = {
