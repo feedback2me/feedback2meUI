@@ -6,13 +6,13 @@ This project brings teachers (masters) and students (juniors) together so that s
 
 ## Dependencies and dev-dependencies
 
-- Nodejs and yarn for development environment and package management.
-- Webpack -> build management
-- Babel -> transpiling to ES5
-- Styled components -> CSS in JS.
-- React -> main UI view library.
-- Redux -> store and data management.
-- Saga -> Async middleware.
+-   Nodejs and yarn for development environment and package management.
+-   Webpack -> build management
+-   Babel -> transpiling to ES5
+-   Styled components -> CSS in JS.
+-   React -> main UI view library.
+-   Redux -> store and data management.
+-   Saga -> Async middleware.
 
 ## Run application in development mode
 
@@ -22,16 +22,18 @@ Start application in development mode: From the application folder run following
 
 ## Build application for production
 
-Production build: From the application folder run following command. Then it will create folder named "dist" which includes necessary files.
+Production build: From the application folder run following command. Then it will create folder named "build" which includes necessary files.
 
 `yarn build`
 
 ## Run unit tests
+
 From the application folder run following command.
 
 `yarn test`
 
 ## Run E2E tests
+
 First run the application as it is explained at "Run application in development mode". After the project is running in dev mode, run following command from e2e folder.
 
 `yarn start`
