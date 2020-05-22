@@ -1,3 +1,4 @@
+// eslint-disable import/no-extraneous-dependencies
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
@@ -5,11 +6,9 @@ import express from 'express';
 import compression from 'compression';
 import helmet from 'helmet';
 import path from 'path';
-// eslint-disable-next-line import/no-extraneous-dependencies
+
 import webpack from 'webpack';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import webpackDevMiddleware from 'webpack-dev-middleware';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import config from '../config/webpack.dev';
 

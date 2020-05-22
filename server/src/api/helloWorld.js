@@ -14,7 +14,7 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
     try {
-        const message = { message: 'Hello World -- Burak Buruk v2' };
+        const message = { message: 'Hello World -- Burak Buruk v6' };
         logger.info(message);
 
         res.json(message);
