@@ -9,7 +9,7 @@ module.exports = merge(common, {
         contentBase: path.join(__dirname, 'build'),
         historyApiFallback: true, // html is served in place of any 404 responses.
         compress: true,
-        port: 9000,
+        port: 8000,
         proxy: {
             '/api': {
                 target: 'http://localhost:8080',
