@@ -7,33 +7,16 @@ This project brings teachers (masters) and students (juniors) together so that s
 ## Dependencies and dev-dependencies
 
 -   Nodejs and yarn for development environment and package management.
+-   React -> main UI view library.
+-   Express -> web server framework
 -   Webpack -> build management
 -   Babel -> transpiling to ES5
--   Styled components -> CSS in JS.
--   React -> main UI view library.
--   Redux -> store and data management.
--   Saga -> Async middleware.
 
-## Run application in development mode
+## Production build
 
-Start application in development mode: From the application folder run following command. Then it will automatically start the project from 9000 port and it will open default browser. It will also start listening changes in the code and reload changed files on save.
+From the root folder run following command. It will create ui and server images and start running them immediately.
 
-`yarn start`
+`docker-compose up`
 
-## Build application for production
-
-Production build: From the application folder run following command. Then it will create folder named "build" which includes necessary files.
-
-`yarn build`
-
-## Run unit tests
-
-From the application folder run following command.
-
-`yarn test`
-
-## Run E2E tests
-
-First run the application as it is explained at "Run application in development mode". After the project is running in dev mode, run following command from e2e folder.
-
-`yarn start`
+UI will be running on: http://localhost:8000/
+Server will be running on: http://localhost:8080/

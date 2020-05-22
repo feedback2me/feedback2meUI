@@ -1,5 +1,5 @@
 # stage: building image in docker image
-FROM node:10 as react-build
+FROM node:10-alpine as react-build
 WORKDIR /app
 COPY . ./
 RUN yarn
