@@ -4,7 +4,7 @@ import { TodoPage } from '../../pages/todoPage';
 import { CodeFeedbackPage } from '../../pages/codeFeedbackPage';
 import { HomePage } from '../../pages/homePage';
 
-import { AntRootContent, AntContent, AntLayout } from './style';
+import { AntContent } from './style';
 
 const Content = () => (
     <AntContent>
