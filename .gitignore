@@ -5,7 +5,7 @@
 node_modules/
 
 # production
-dist/
+build/
 
 # test
 coverage/
