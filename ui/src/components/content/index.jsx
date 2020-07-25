@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { TodoPage } from '../../pages/todoPage';
 import { CodeFeedbackPage } from '../../pages/codeFeedbackPage';
+import { RequestFeedbackPage } from '../../pages/requestFeedback';
 import { HomePage } from '../../pages/homePage';
 
 import { AntContent } from './style';
@@ -17,6 +18,9 @@ const Content = () => (
             </Route>
             <Route path="/codeFeedback">
                 <CodeFeedbackPage />
+            </Route>
+            <Route path="/request-feedback">
+                <RequestFeedbackPage />
             </Route>
         </Switch>
     </AntContent>

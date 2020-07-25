@@ -37,6 +37,11 @@ export const Sider = ({ selectedMenuId, onSelectMenu }) => (
                     <CarryOutOutlined /> Todo
                 </Link>
             </Menu.Item>
+            <Menu.Item key="request-feedback-menu">
+                <Link to="/request-feedback">
+                    <CarryOutOutlined /> Request feedback
+                </Link>
+            </Menu.Item>
             <SubMenu key="feedback-menu" title="Feedback">
                 <Menu.Item key="feedback-menu-item">
                     <Link to="/codeFeedback">
