@@ -1,8 +1,29 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
+const path = require('path');
 
-module.exports = merge(common, {
+module.exports = {
     mode: 'production',
-    entry: ['./src/app-prod.js'],
-});
+    entry: ['./src/app.js'],
+    output: {
+        path: path.join(`${__dirname}/../`, 'build'),
+        publicPath: 'js/',
+        filename: 'app.bundle.js',
+    },
+    target: 'node',
+    node: {
+        __dirname: false,
+        __filename: false,
+    },
+    module: {
+        rules: [
+            {
+                // Transpiles ES6-8 into ES5
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                },
+            },
+        ],
+    },
+};
