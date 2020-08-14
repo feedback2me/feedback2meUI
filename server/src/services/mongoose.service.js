@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 let count = 0;
 
 const options = {
@@ -8,22 +9,21 @@ const options = {
     poolSize: 10, // Maintain up to 10 socket connections
     // If not connected, return errors immediately rather than waiting for reconnect
     bufferMaxEntries: 0,
-    //geting rid off the depreciation errors
+    // geting rid off the depreciation errors
     useNewUrlParser: true,
     useUnifiedTopology: true,
 };
 const connectWithRetry = () => {
-    console.log('MongoDB connection with retry');
     mongoose
         .connect('mongodb://localhost:27017/feedback2me', options)
         .then(() => {
+            // eslint-disable-next-line no-console
             console.log('MongoDB is connected');
         })
         .catch((err) => {
-            console.log(
-                'MongoDB connection unsuccessful, retry after 5 seconds. ',
-                ++count,
-            );
+            const errorMessage = `MongoDB connection unsuccessful, retry after 5 seconds. ${err}`;
+            // eslint-disable-next-line no-console
+            console.log(errorMessage, ++count);
             setTimeout(connectWithRetry, 5000);
         });
 };

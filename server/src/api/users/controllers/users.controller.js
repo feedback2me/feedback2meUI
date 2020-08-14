@@ -1,28 +1,28 @@
-const UserModel = require('../models/users.model');
 const crypto = require('crypto');
+const UserModel = require('../models/users.model');
 
 exports.insert = (req, res) => {
-    let salt = crypto.randomBytes(16).toString('base64');
-    let hash = crypto
+    const salt = crypto.randomBytes(16).toString('base64');
+    const hash = crypto
         .createHmac('sha512', salt)
         .update(req.body.password)
         .digest('base64');
-    req.body.password = salt + '$' + hash;
+    req.body.password = `${salt}$${hash}`;
     req.body.permissionLevel = 1;
     UserModel.createUser(req.body).then((result) => {
+        // eslint-disable-next-line no-underscore-dangle
         res.status(201).send({ id: result._id });
     });
 };
 
 exports.list = (req, res) => {
-    let limit =
-        req.query.limit && req.query.limit <= 100
-            ? parseInt(req.query.limit)
-            : 10;
+    const limit = req.query.limit && req.query.limit <= 100
+        ? parseInt(req.query.limit, 10)
+        : 10;
     let page = 0;
     if (req.query) {
         if (req.query.page) {
-            req.query.page = parseInt(req.query.page);
+            req.query.page = parseInt(req.query.page, 10);
             page = Number.isInteger(req.query.page) ? req.query.page : 0;
         }
     }
@@ -38,21 +38,21 @@ exports.getById = (req, res) => {
 };
 exports.patchById = (req, res) => {
     if (req.body.password) {
-        let salt = crypto.randomBytes(16).toString('base64');
-        let hash = crypto
+        const salt = crypto.randomBytes(16).toString('base64');
+        const hash = crypto
             .createHmac('sha512', salt)
             .update(req.body.password)
             .digest('base64');
-        req.body.password = salt + '$' + hash;
+        req.body.password = `${salt}$${hash}`;
     }
 
-    UserModel.patchUser(req.params.userId, req.body).then((result) => {
+    UserModel.patchUser(req.params.userId, req.body).then(() => {
         res.status(204).send({});
     });
 };
 
 exports.removeById = (req, res) => {
-    UserModel.removeById(req.params.userId).then((result) => {
+    UserModel.removeById(req.params.userId).then(() => {
         res.status(204).send({});
     });
 };

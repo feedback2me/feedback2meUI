@@ -1,7 +1,4 @@
-// eslint-disable import/no-extraneous-dependencies
-// import 'core-js/stable';
-// import 'regenerator-runtime/runtime';
-
+/* eslint-disable global-require */
 const express = require('express');
 const compression = require('compression');
 const helmet = require('helmet');
@@ -20,8 +17,9 @@ app.use(compression());
 app.use(express.json());
 
 if (process.env.development) {
-    const morgan = require('morgan'); // what
-    app.use(morgan('tiny')); // what
+    // eslint-disable-next-line import/no-extraneous-dependencies
+    const morgan = require('morgan'); // why is this being used?
+    app.use(morgan('tiny')); // why is this being used?
 }
 
 api(app);

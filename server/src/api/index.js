@@ -3,7 +3,7 @@ const AuthorizationRouter = require('./authorization/routes.config');
 const UsersRouter = require('./users/routes.config');
 
 function setHeaders(server) {
-    return server.use(function (req, res, next) {
+    return server.use((req, res, next) => {
         res.header('Access-Control-Allow-Origin', '*');
         res.header('Access-Control-Allow-Credentials', 'true');
         res.header(
@@ -17,9 +17,8 @@ function setHeaders(server) {
         );
         if (req.method === 'OPTIONS') {
             return res.send(200);
-        } else {
-            return next();
         }
+        return next();
     });
 }
 

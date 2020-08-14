@@ -3,11 +3,11 @@ const PermissionMiddleware = require('../common/middlewares/auth.permission.midd
 const ValidationMiddleware = require('../common/middlewares/auth.validation.middleware');
 const config = require('../common/config/env.config');
 
-const ADMIN = config.permissionLevels.ADMIN;
+const { ADMIN } = config.permissionLevels;
 const PAID = config.permissionLevels.PAID_USER;
 const FREE = config.permissionLevels.NORMAL_USER;
 
-exports.routesConfig = function (app) {
+exports.routesConfig = (app) => {
     app.post('/api/v1/users', [UsersController.insert]);
     app.get('/api/v1/users', [
         ValidationMiddleware.validJWTNeeded,
