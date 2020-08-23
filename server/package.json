@@ -7,9 +7,8 @@
     "author": "Burak Buruk <burak.bburuk@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "build-dev": "rimraf build && webpack --config config/webpack.dev.js",
-        "start": "yarn build-dev && node ./build/app.bundle.js",
-        "build": "rimraf build && webpack --config config/webpack.prod.js",
+        "start": "env NODE_ENV=development && nodemon ./src/app.js",
+        "build": "rimraf build && env NODE_ENV=production && webpack --config config/webpack.prod.js",
         "build-image": "docker build . -t feedback2me-server",
         "run-image": "docker run -p 8080:8080 feedback2me-server",
         "lint": "eslint src/",
@@ -18,8 +17,11 @@
     "dependencies": {
         "compression": "^1.7.4",
         "core-js": "^3.6.5",
+        "crypto": "^1.0.1",
         "express": "^4.17.1",
         "helmet": "^3.22.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.9.29",
         "regenerator-runtime": "^0.13.5",
         "winston": "^3.2.1"
     },
@@ -34,13 +36,11 @@
         "eslint-plugin-import": "^2.20.2",
         "jest": "^26.0.1",
         "morgan": "^1.10.0",
+        "nodemon": "^2.0.4",
         "prettier": "^2.0.5",
         "rimraf": "^3.0.2",
         "webpack": "^4.43.0",
         "webpack-cli": "^3.3.11",
-        "webpack-dev-middleware": "^3.7.2",
-        "webpack-hot-middleware": "^2.25.0",
-        "webpack-merge": "^4.2.2",
         "webpack-node-externals": "^1.7.2"
     }
 }
