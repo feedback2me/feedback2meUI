@@ -19,7 +19,7 @@
     "dependencies": {
         "@ant-design/icons": "^4.1.0",
         "antd": "^4.1.2",
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "babel-polyfill": "^6.26.0",
         "immutable": "^4.0.0-rc.12",
         "prop-types": "^15.7.2",
